@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>NeighborBurger Map</title>
+	<!-- TODO: add favico -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- SIDEBAR MENU -->
+			<nav class="col-lg-2 navbar navbar-expand-lg navbar-dark bg-dark flex-lg-column">
+				<a class="navbar-brand" href="#">NeighborBurger</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse flex-lg-column" id="navbarNav">
+					<hr class="my-2">
+					<div class="input-group">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search Locations..." data-bind="value: query, valueUpdate: 'keyup'">
+					</div>
+					<hr class="my-2">
+
+					<ul class="navbar-nav flex-lg-column">
+						<li class="nav-item" data-bind="foreach: filteredLocations">
+							<a class="nav-link" href="#" data-bind="text: title, click: $parent.highlightLocation"></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main id="map" role="main" class="col-sm-10 ml-sm-auto"></main>
+		</div>
+	</div>
+
+	<script src="js/lib/knockout-3.4.2.js"></script>
+	<script src="js/app.js"></script>
+	<!-- TODO puterror callback on google load and test it! -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtQRjON881xEIYh15LYynriJYCRux4xgw&callback=viewModel.initMap" async defer onerror="viewModel.showError('Sorry, but we could not load google Map')"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

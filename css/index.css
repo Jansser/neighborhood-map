@@ -1,0 +1,11 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+}
+
+.container-fluid,
+.row,
+#map {
+  height: 100%;
+}
