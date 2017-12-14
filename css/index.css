@@ -9,3 +9,7 @@ body {
 #map {
   height: 100%;
 }
+
+.list-group-item {
+  padding: .75rem 0rem;
+}
